@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <style type="text/css">
+        .form-style-1 {
+            margin:10px auto;
+            max-width: 400px;
+            padding: 20px 12px 10px 20px;
+            font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        }
+        .form-style-1 li {
+            padding: 0;
+            display: block;
+            list-style: none;
+            margin: 10px 0 0 0;
+        }
+        .form-style-1 label{
+            margin:0 0 3px 0;
+            padding:0px;
+            display:block;
+            font-weight: bold;
+        }
+        .form-style-1 input[type=text], 
+        .form-style-1 input[type=date],
+        .form-style-1 input[type=datetime],
+        .form-style-1 input[type=number],
+        .form-style-1 input[type=search],
+        .form-style-1 input[type=time],
+        .form-style-1 input[type=url],
+        .form-style-1 input[type=email],
+        textarea, 
+        select{
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            border:1px solid #BEBEBE;
+            padding: 7px;
+            margin:0px;
+            outline: none;	
+        }
+        .form-style-1 input[type=text]:focus, 
+        .form-style-1 input[type=date]:focus,
+        .form-style-1 input[type=datetime]:focus,
+        .form-style-1 input[type=number]:focus,
+        .form-style-1 input[type=search]:focus,
+        .form-style-1 input[type=time]:focus,
+        .form-style-1 input[type=url]:focus,
+        .form-style-1 input[type=email]:focus,
+        .form-style-1 textarea:focus, 
+        .form-style-1 select:focus{
+            -moz-box-shadow: 0 0 8px #88D5E9;
+            -webkit-box-shadow: 0 0 8px #88D5E9;
+            box-shadow: 0 0 8px #88D5E9;
+            border: 1px solid #88D5E9;
+        }
+        .form-style-1 .field-divided{
+            width: 49%;
+        }
+        
+        .form-style-1 .field-long{
+            width: 100%;
+        }
+        .form-style-1 .field-select{
+            width: 100%;
+        }
+        .form-style-1 .field-textarea{
+            height: 100px;
+        }
+        .form-style-1 input[type=submit], .form-style-1 input[type=button]{
+            background: #4B99AD;
+            padding: 8px 15px 8px 15px;
+            border: none;
+            color: #fff;
+        }
+        .form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+            background: #4691A4;
+            box-shadow:none;
+            -moz-box-shadow:none;
+            -webkit-box-shadow:none;
+        }
+        .form-style-1 .required{
+            color:red;
+        }
+        </style>
+</head>
+<body>
+  <!--header section start -->
+    
+    <center><h1>CrediCard Apply</h1></center>
+    <!-- Form start -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <ul class="form-style-1">
+            <li><label>Full Name <span class="required">*</span></label><input type="text" name="fname" class="field-divided" placeholder="First Name" /> </li>
+            <li><label>Midale Name <span class="required">*</span></label><input type="text" name="mname" class="field-divided" placeholder="Middale Name" /> </li>
+            <li><label>Last Name <span class="required">*</span></label><input type="text" name="lname" class="field-divided" placeholder="Last First" /> </li>
+            <li><label>Email <span class="required">*</span></label><input type="email" name="email" class="field-divided" placeholder="Email" /></li>
+            <li><label>Mobile No. <span class="required">*</span></label><input type="number" name="mobile" class="field-divided" placeholder="Mobile No." /> </li>
+            <li><label>Mother Name <span class="required">*</span></label><input type="text" name="mothername" class="field-divided" placeholder="Mother Name" /> </li>
+            <li>
+                <label>Gender</label>
+                <select name="gender" class="field-select">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+                </select>
+            </li>
+            <li><label>Job Designation / Bussiness<span class="required">*</span></label><input type="text" name="jobdesignation" class="field-divided" placeholder="Job Designation" /></li>
+            <li><label>Sallary / Income<span class="required">*</span></label><input type="number" name="sallary" class="field-divided" placeholder="Sallary" /> </li>
+            <li><label>Birthdate<span class="required">*</span></label><input type="date" name="birthdate" class="field-divided" placeholder="Birthday" /> </li>
+            <li><label>Address<span class="required">*</span></label><input type="text" name="address" class="field-divided" placeholder="Addess" /> </li>
+            <li><label>City<span class="required">*</span></label><input type="text" name="city" class="field-divided" placeholder="City" /> </li>
+            <li><label>PinCode<span class="required">*</span></label><input type="number" name="pincode" class="field-divided" placeholder="PinCode" /> </li>
+            <li><label>Aadhar Card<span class="required">*</span></label><input type="file" name="aadharcard" class="field-divided"  /> </li>
+            <li><label>Pan Card<span class="required">*</span></label><input type="file" name="pancard" class="field-divided"/> </li>
+            <li><label>User Image<span class="required">*</span></label><input type="file" name="userimages" class="field-divided"/> </li>
+            <li><label>One Year Bank Statement<span class="required">*</span></label><input type="file" name="bankstatement" class="field-divided" /> </li>
+            <li><label>Sallary Slip / Bussiness Certifcate<span class="required">*</span></label><input type="file" name="sllaryslip" class="field-divided" /> </li>
+            
+            <li>
+                <label>Select Bank</label>
+                <select name="selectbank" class="field-select">
+                <option value="Bank of India">Bank of India</option>
+                <option value="State Bank Of india">State Bank Of india</option>
+                <option value="Kotak Mahindra Bank">Kotak Mahindra Bank</option>
+                <option value="Bank of Baroda">Bank of Baroda</option>
+                <option value="Bank of Maharashtra">Bank of Maharashtra</option>
+                <option value="Canara Bank">Canara Bank</option>
+                <option value="Union Bank Of India">Union Bank Of India</option>
+                <option value="Central Bank of India">Central Bank of India</option>
+                <option value="UCO Bank">UCO Bank</option>
+                <option value="Punjab National Bank">Punjab National Bank</option>
+                </select>
+            </li>
+            
+            
+           
+            <li>
+                <input type="submit" value="Submit" />
+            </li>
+        </ul>
+        </form>
+        <!-- form Ended -->
+</body>
+</html>
+{% endblock %}

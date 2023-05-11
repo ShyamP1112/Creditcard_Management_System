@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <!--header section start -->
+    </div>
+    <!-- header section end -->
+    <!-- contact section start -->
+    <div class="Contact_section layout_padding">
+      <div class="container">
+        <h1 class="categories_text">Rqueste a call back</h1>
+        <p class="dummy_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered a</p>
+        <div class="email_box">
+          <div class="input_main">
+            <div class="container">
+              <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <input type="text" class="email-bt" placeholder="Name" name="name">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="email-bt" placeholder="Phone Numbar" name="phonenumber">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="email-bt" placeholder="Email Address" name="email">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="massage-bt" placeholder="Email Address" name="massage">
+                </div>
+                <div><input class="send_bt" type="submit" value="Send It"></div>
+              </form>   
+            </div> 
+                             
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- contact section end -->
+    <!-- footer section start -->
+      
+</body>
+</html>
+{% endblock %}
